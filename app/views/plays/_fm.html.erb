@@ -1,0 +1,13 @@
+<%= form_for(login_domos_path) do |f| %>
+
+  <div class="field">
+    
+
+    <%= f.label :email, 'Email:' %>
+    <%= f.text_field :email, size: 20, maxlength:50 %> <br />
+
+    <%= f.submit 'ログイン' %>
+
+  </div>
+
+<% end %>

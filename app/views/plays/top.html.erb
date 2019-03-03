@@ -1,2 +1,7 @@
-<h1>Plays#top</h1>
-<p>Find me in app/views/plays/top.html.erb</p>
+<h1>あなたの作品と紹介をシンプルに表示
+</h1>
+
+
+<%= link_to_if @user.nil?, 'サインイン', controller: :domos, action: :new do |name|
+  link to 'ログイン', controller: :domos, action: :login 
+end %> 

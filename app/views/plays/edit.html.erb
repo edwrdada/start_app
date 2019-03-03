@@ -1,2 +1,7 @@
-<h1>Plays#edit</h1>
-<p>Find me in app/views/plays/edit.html.erb</p>
+<h1>編集</h1>
+
+<%= render 'form', play: @play %>
+
+
+
+<%= link_to 'Back', play_path(@play) %>

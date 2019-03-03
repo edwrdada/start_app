@@ -1,2 +1,6 @@
-<h1>Plays#new</h1>
-<p>Find me in app/views/plays/new.html.erb</p>
+<h1>アカウント作成</h1>
+
+<%= render 'form', play: @play %>
+
+<%= link_to 'Home', top_plays_path %>
+<%= link_to 'Log-in Page', login_plays_path %>

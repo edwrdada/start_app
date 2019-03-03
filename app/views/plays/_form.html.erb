@@ -1,0 +1,14 @@
+<%= form_for(play) do |f| %>
+
+  <div class="field">
+    <%= f.label :name, 'Name:' %>
+    <%= f.text_field :name, size: 20, maxlength:25 %> <br />
+
+    <%= f.label :email, 'Email:' %>
+    <%= f.text_field :email, size: 20, maxlength:50 %> <br />
+
+    <%= f.submit '登録' %>
+
+  </div>
+
+<% end %>
