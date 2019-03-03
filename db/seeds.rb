@@ -5,4 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Play.create({name: 'dadada'}, {email: 'example@foo.net'})
+plays = Play.create(name: 'dadada', email: 'example@foo.net')
