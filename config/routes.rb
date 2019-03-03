@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :domos, except: [:index] do
+  resources :plays, except: [:index] do
     collection do 
       get :login
       get :top
@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   end
 
-  root to: 'plays#top'
+   root to: 'plays#top'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
