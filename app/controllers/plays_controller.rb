@@ -26,7 +26,7 @@ class PlaysController < ApplicationController
     @play = Play.create(play_params)
 
     if @play.save
-      redirect_to 'show'
+      redirect_to @play
     else
       render 'new'
     end
@@ -38,8 +38,9 @@ class PlaysController < ApplicationController
 
   def destroy
     @play.destroy
+    
     if @play.nil
-      redirect_to top_plays_path
+      redirect_to 'plays/top'
     else
       render 'edit'
     end
@@ -52,6 +53,7 @@ class PlaysController < ApplicationController
   end
 
   def play_params
-    params.require(:play).permit(:name, :email)
+    params.require(:play).permit(:name, :email,
+     :password, :password_confirmation)
   end
 end
