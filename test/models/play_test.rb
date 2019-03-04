@@ -47,4 +47,11 @@ class PlayTest < ActiveSupport::TestCase
       assert_not @play.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
+
+  test "email addresses unique" do
+    dup_user = @play.dup
+    dup_user.email = @play.email.upcase
+    @play.save
+    assert_not duplicate_user.valid?
+  end
 end
