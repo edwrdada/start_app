@@ -15,6 +15,11 @@ class PlaysController < ApplicationController
   end
 
   def login
+
+  end
+
+  def login_to
+    
   end
 
   def create
@@ -31,7 +36,14 @@ class PlaysController < ApplicationController
     @play = Play.update(play_params)
   end
 
-
+  def destroy
+    @play.destroy
+    if @play.nil
+      redirect_to top_plays_path
+    else
+      render 'edit'
+    end
+  end
 
   private
   

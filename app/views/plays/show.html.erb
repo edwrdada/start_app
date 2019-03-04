@@ -1,2 +1,13 @@
-<h1>Plays#show</h1>
-<p>Find me in app/views/plays/show.html.erb</p>
+<header>
+ <%= link_to 'Edit', edit_play_path(@play) %> 
+</header>
+
+<p>
+  <strong>Name:</strong>
+  <%= @play.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @play.email %>
+</p>

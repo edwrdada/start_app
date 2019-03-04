@@ -1,7 +1,7 @@
 <h1>編集</h1>
 
-<%= render 'form', play: @play %>
+<%= render 'form', play: @play %><br />
 
-
+<%= link_to 'Delete', destroy_play_path(@play) %><br>
 
 <%= link_to 'Back', play_path(@play) %>
