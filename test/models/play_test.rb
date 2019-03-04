@@ -3,7 +3,8 @@ require 'test_helper'
 class PlayTest < ActiveSupport::TestCase
   
   def setup
-    @play = Play.new(name: "example user", email: "play@example.com")
+    @play = Play.new(name: "example user", email: "play@example.com",
+    password: "foobar", password_confirmation: "foobar")
   end
 
   test "should be valid" do
@@ -53,5 +54,14 @@ class PlayTest < ActiveSupport::TestCase
     dup_user.email = @play.email.upcase
     @play.save
     assert_not duplicate_user.valid?
+  end
+
+  test "password should be present (not blank)" do
+    @play.password = @play.password_confirmation = '' * 12
+    assert_not @play.valid?
+  end
+
+  test "password should have a minimum length" do
+    @play.password = @play.password_confirmation = "a" * 7
   end
 end
