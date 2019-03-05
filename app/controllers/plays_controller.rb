@@ -26,6 +26,7 @@ class PlaysController < ApplicationController
     @play = Play.create(play_params)
 
     if @play.save
+      log_in @play
       redirect_to @play
     else
       render 'new'
@@ -33,11 +34,15 @@ class PlaysController < ApplicationController
   end
 
   def update
-    @play = Play.update(play_params)
+    if @play.update_attributes(play_params)
+
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-    @play.destroy
+    @play.delete
     
     if @play.nil
       redirect_to 'plays/top'
